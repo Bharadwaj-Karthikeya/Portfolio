@@ -426,20 +426,42 @@ footer {
 }
 
 .social-links a {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    background: var(--accent);
-    color: #fff;
+    gap: 0.5rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent-light);
+    background: transparent;
+    color: var(--text);
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 .social-links a:hover {
-    background: #3249b2;
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-label {
+    min-width: 0;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 600;
+    transition: max-width 0.3s ease, opacity 0.3s ease;
+}
+
+.social-links a:hover .social-label,
+.social-links a:focus-visible .social-label {
+    max-width: 140px;
+    opacity: 1;
 }
 
 .projects-page,
@@ -467,11 +489,12 @@ footer {
     display: flex;
     gap: 1.25rem;
     overflow-x: auto;
+    padding-left: 0.5rem;
     padding-bottom: 0.75rem;
 }
 
 .project-card {
-    min-width: 240px;
+    width: 400px;
     background: #fff;
     border-radius: var(--radius);
     padding: 1rem;
