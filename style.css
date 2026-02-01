@@ -487,18 +487,25 @@ footer {
 
 .scroll-strip {
     display: flex;
+    flex-wrap: nowrap;
     gap: 1.25rem;
     overflow-x: auto;
-    padding-left: 0.5rem;
-    padding-bottom: 0.75rem;
+    padding: 0.25rem 0 0.75rem;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 0.25rem;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none ;
 }
 
 .project-card {
+    flex: 0 0 400px;
     width: 400px;
     background: #fff;
     border-radius: var(--radius);
+    border: 1px solid var(--accent-light);
     padding: 1rem;
-    box-shadow: var(--shadow);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .project-card img {
@@ -543,6 +550,41 @@ footer {
     justify-content: center;
 }
 
+.scroll-shell {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.scroll-btn {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent-light);
+    background: var(--card);
+    color: var(--text);
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.scroll-btn:hover,
+.scroll-btn:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.scroll-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
 @keyframes spin {
     from {
         transform: rotate(0deg);

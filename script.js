@@ -1,5 +1,6 @@
 initThemeToggle();
 initContactForm();
+initScrollStrips();
 
 function initThemeToggle() {
     const toggles = document.querySelectorAll('.theme-toggle');
@@ -66,5 +67,51 @@ function initContactForm() {
         statusBox.textContent = 'Thanks! I will reply soon.';
         statusBox.className = 'success';
         form.reset();
+    });
+}
+
+function initScrollStrips() {
+    const shells = document.querySelectorAll('.scroll-shell');
+
+    if (!shells.length) {
+        return;
+    }
+
+    shells.forEach((shell) => {
+        const strip = shell.querySelector('[data-scroll-strip]');
+        const prevBtn = shell.querySelector('.scroll-btn.prev');
+        const nextBtn = shell.querySelector('.scroll-btn.next');
+
+        if (!strip || !prevBtn || !nextBtn) {
+            return;
+        }
+
+        const getStepAmount = () => {
+            const cardWidth = strip.querySelector('.project-card')?.offsetWidth || strip.clientWidth;
+            const styles = window.getComputedStyle(strip);
+            const gapValue = parseFloat(styles.columnGap || styles.gap || '0');
+            const gap = Number.isNaN(gapValue) ? 0 : gapValue;
+            return cardWidth + gap;
+        };
+
+        const updateButtons = () => {
+            const maxScroll = strip.scrollWidth - strip.clientWidth;
+            const left = strip.scrollLeft;
+            const threshold = 4;
+            prevBtn.disabled = left <= threshold;
+            nextBtn.disabled = left >= maxScroll - threshold;
+        };
+
+        const scrollByStep = (direction) => {
+            const amount = getStepAmount() * direction;
+            strip.scrollBy({ left: amount, behavior: 'smooth' });
+        };
+
+        prevBtn.addEventListener('click', () => scrollByStep(-1));
+        nextBtn.addEventListener('click', () => scrollByStep(1));
+        strip.addEventListener('scroll', updateButtons, { passive: true });
+        window.addEventListener('resize', updateButtons);
+
+        updateButtons();
     });
 }
