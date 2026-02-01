@@ -5,31 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Bharadwaj</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <nav>
+    <nav class="site-nav">
         <img src="Bharadwaj-logo.png" alt="Bharadwaj's Logo" class="logo">
-        <div>
-        <ul marker="none">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contacts.html">Contact</a></li>
-                <li><button></button></li>
-            </ul>
-        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+                        <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <line x1="12" y1="2" x2="12" y2="4"></line>
+                            <line x1="12" y1="20" x2="12" y2="22"></line>
+                            <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line>
+                            <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line>
+                            <line x1="2" y1="12" x2="4" y2="12"></line>
+                            <line x1="20" y1="12" x2="22" y2="12"></line>
+                            <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line>
+                            <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line>
+                        </svg>
+                        <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 8.5 8.5 0 1 0 21 14.5Z"></path>
+                        </svg>
+                    </button>
+                </li>
+        </ul>
     </nav>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a dedicated UX/UI designer with experience in creating user-friendly designs and developing engaging user interfaces. My passion lies in blending creativity with technology trying to always deliver exceptional user experiences.
-            <br><br>
-            I specialize in user research, wireframing, prototyping, and front-end development. My goal is to craft intuitive and visually appealing digital products that resonate with users and meet business objectives.
-            <br><br>
-            Alongside my design skills, I have a strong foundation in frontend development and full-stack frameworks like MERN stack, enabling me to bring designs to life with clean and efficient code.
-            <br><br>
-            I also have a growing knowledge in C++, C#, Python languages and interests in AI/ML and Cloud. 
-        </p>
-    </section>
+
+    <main class="projects-page">
+        <section class="page-hero">
+            <p class="tag">About</p>
+            <h1>Curious student combining UX craft with code</h1>
+            <p>I enjoy sketching flows, testing small prototypes with friends, and then building the solution with clean HTML/CSS/JS. This page will grow with more milestones.</p>
+        </section>
+
+        <section class="cards about-who" id="about">
+            <h2>Who I am</h2>
+            <p>I'm building a career that blends UX craft with front-end engineering so I can move from insight to shipped prototype without waiting in line.</p>
+            <div class="card-row">
+                <article class="card">
+                    <h3>Who I am currently</h3>
+                    <p>A student designer learning at Lovely Professional University balancing coursework with self-driven learning, designing and building sprints. I partner with classmates, clubs to turn problems and rough ideas into structured journeys.</p>
+                </article>
+                <article class="card">
+                    <h3>What I know to do</h3>
+                    <p>I map research into flows, iterate in Figma, translate systems into semantic HTML/CSS/JS, experiment with MERN stack patterns, and model/game build inside Unity and Blender.</p>
+                </article>
+                <article class="card">
+                    <h3>What I'm doing now</h3>
+                    <p>Documenting case studies, polishing the horizontal project gallery, and prepping internship-ready work by pairing usability tests with functional front-end demos.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="skills about-skills" id="skills-tools">
+            <h2>Skills & tools</h2>
+            <p>This is the full toolkit that will later animate into domain buckets. The home page now summarizes just the domains, but here are the ingredients behind them.</p>
+            <div class="skill-table">
+                <div class="skill-row"><strong>UX/UI Design</strong> &ndash; user research, storytelling, and interface systems.</div>
+                <div class="skill-row"><strong>Figma</strong> components, auto-layouts, and interactive prototypes.</div>
+                <div class="skill-row"><strong>Web & Application Design</strong> spanning responsive layouts and accessibility passes.</div>
+                <div class="skill-row"><strong>Front-end build</strong> with semantic HTML, modern CSS, and vanilla JS polish.</div>
+                <div class="skill-row"><strong>MERN stack development</strong> fundamentals for CRUD dashboards and auth.</div>
+                <div class="skill-row"><strong>Game design</strong> principles for narrative pacing and player feedback.</div>
+                <div class="skill-row"><strong>Unity</strong> (C#) prototyping for mechanics, UI HUDs, and shaders.</div>
+                <div class="skill-row"><strong>Blender</strong> for low-poly modeling, lighting studies, and renders.</div>
+                <div class="skill-row"><strong>C++</strong> foundations for algorithms and performance thinking.</div>
+                <div class="skill-row"><strong>Python</strong> scripts for quick automation and data cleanup.</div>
+            </div>
+        </section>
+
+        <section class="cards about-life" id="life">
+            <h2>Outside of work</h2>
+            <p>Creative recharge keeps my work playful, curious, and grounded.</p>
+            <div class="card-row">
+                <article class="card">
+                    <h3>Animation fan</h3>
+                    <p>I watch animated films and series to absorb timing, color palettes, and storytelling tricks.</p>
+                </article>
+                <article class="card">
+                    <h3>Light gaming</h3>
+                    <p>I pick up different games to study mechanics, UX cues, and how tiny details make worlds believable.</p>
+                </article>
+                <article class="card">
+                    <h3>Tech & finance intel</h3>
+                    <p>I track new advancements across tech and finance so I can design with future constraints in mind.</p>
+                </article>
+                <article class="card">
+                    <h3>Curious generalist</h3>
+                    <p>I explore other domains just to understand how they work&mdash;it keeps my perspective flexible.</p>
+                </article>
+                <article class="card">
+                    <h3>Nature time</h3>
+                    <p>Long walks and time outdoors reset my brain and remind me why calm interfaces matter.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="cards about-cta" style="align-content: center;">
+            <h2>Want to keep going?</h2>
+            
+            <div class="hero-actions">
+                <a class="btn" href="projects.html">Explore more of my work</a>
+                <a class="btn outline" href="contact.html">Get in touch with me</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Bharadwaj Karthikeya &middot; UX/UI & Front-end student</p>
+        <div class="social-links">
+            <a href="https://github.com/Bharadwaj-Karthikeya" aria-label="GitHub">GH</a>
+            <a href="https://www.linkedin.com/in/bharadwaj-karthikeya" aria-label="LinkedIn">IN</a>
+            <a href="https://www.behance.net/bharadwaj_karthikeya" aria-label="LinkedIn">BE</a>
+            <a href="mailto:pbk311205@gmail.com" aria-label="Email">@</a>
+        </div>
+        <p class="footer-note">Based in Hyderabad, India &middot; hello@example.com</p>
+    </footer>
 </body>
 </html>

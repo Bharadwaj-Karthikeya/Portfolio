@@ -3,21 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Projects & Gallery</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <nav>
+    <nav class="site-nav">
         <img src="Bharadwaj-logo.png" alt="Bharadwaj's Logo" class="logo">
-        <div>
-        <ul marker="none">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contacts.html">Contact</a></li>
-                <li><button></button></li>
-            </ul>
-        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <button class="theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+                    <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <line x1="12" y1="2" x2="12" y2="4"></line>
+                        <line x1="12" y1="20" x2="12" y2="22"></line>
+                        <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line>
+                        <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line>
+                        <line x1="2" y1="12" x2="4" y2="12"></line>
+                        <line x1="20" y1="12" x2="22" y2="12"></line>
+                        <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line>
+                        <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line>
+                    </svg>
+                    <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 8.5 8.5 0 1 0 21 14.5Z"></path>
+                    </svg>
+                </button>
+            </li>
+        </ul>
     </nav>
+
+    <main class="projects-page">
+        <section class="page-hero">
+            <p class="tag">Project Gallery</p>
+            <h1>Documenting my learning sprint</h1>
+            <p>Every scroll strip below is a growing folder of assignments, experiments, and community challenges. I will keep adding detailed write ups soon.</p>
+        </section>
+
+        <section class="project-section" id="ux-ui">
+            <div class="section-head">
+                <h2>UX/UI case studies</h2>
+                <p>Wireframes, usability notes, and polished mockups.</p>
+            </div>
+            <div class="scroll-strip">
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/320x200" alt="Mobile app wireframe">
+                    <small>Case Study</small>
+                    <h3>Campus commute planner</h3>
+                    <p>Onboarding research, user journey, and responsive screen set.</p>
+                </article>
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/320x200" alt="Dashboard concept">
+                    <small>Dashboard</small>
+                    <h3>Finance coaching tool</h3>
+                    <p>Component library, accessibility review, and prototype.</p>
+                </article>
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/320x200" alt="Tablet UI">
+                    <small>Product UI</small>
+                    <h3>Habit tracker</h3>
+                    <p>Detailed motion study with alternative layouts.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="project-section" id="dev">
+            <div class="section-head">
+                <h2>Development projects</h2>
+                <p>MERN stack practice, frontend challenges, and API demos.</p>
+            </div>
+            <div class="scroll-strip">
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/320x200" alt="Code editor">
+                    <small>Full Stack</small>
+                    <h3>Task manager lite</h3>
+                    <p>Auth, CRUD dashboards, and chart visualizations.</p>
+                </article>
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/320x200" alt="Landing page">
+                    <small>Frontend</small>
+                    <h3>Marketing landing page</h3>
+                    <p>Responsive Flex/Grid layout with micro animations.</p>
+                </article>
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/320x200" alt="API preview">
+                    <small>API</small>
+                    <h3>Weather buddy</h3>
+                    <p>Fetches OpenWeather data and shares helpful tips.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="project-section" id="games">
+            <div class="section-head">
+                <h2>Game dev & Blender</h2>
+                <p>Unity prototypes and modeling practice from late-night sprints.</p>
+            </div>
+            <div class="scroll-strip">
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/320x200" alt="Low poly scene">
+                    <small>Blender</small>
+                    <h3>Cozy study room</h3>
+                    <p>Lighting, camera framing, and texture study.</p>
+                </article>
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/320x200" alt="Puzzle game">
+                    <small>Unity</small>
+                    <h3>Puzzle exploration</h3>
+                    <p>Third-person controller, custom shaders, and UI HUD.</p>
+                </article>
+                <article class="project-card">
+                    <img src="https://via.placeholder.com/320x200" alt="Stylized character">
+                    <small>Character</small>
+                    <h3>Stylized avatar</h3>
+                    <p>Rigging test plus animation cycles.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Bharadwaj Karthikeya &middot; UX/UI & Front-end student</p>
+        <div class="social-links">
+            <a href="https://github.com/Bharadwaj-Karthikeya" aria-label="GitHub">GH</a>
+            <a href="https://www.linkedin.com/in/bharadwaj-karthikeya" aria-label="LinkedIn">IN</a>
+            <a href="https://www.behance.net/bharadwaj_karthikeya" aria-label="LinkedIn">BE</a>
+            <a href="mailto:pbk311205@gmail.com" aria-label="Email">@</a>
+        </div>
+        <p class="footer-note">Based in Hyderabad, India &middot; hello@example.com</p>
+    </footer>
 </body>
 </html>

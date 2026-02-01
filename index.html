@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bharadwaj's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <nav class="site-nav">
@@ -14,7 +15,24 @@
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><button><img src="https://www.flaticon.com/free-icons/moonlight" alt="Toggle Dark Mode" class="theme"></button></li>
+            <li>
+                <button class="theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+                    <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <line x1="12" y1="2" x2="12" y2="4"></line>
+                        <line x1="12" y1="20" x2="12" y2="22"></line>
+                        <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line>
+                        <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line>
+                        <line x1="2" y1="12" x2="4" y2="12"></line>
+                        <line x1="20" y1="12" x2="22" y2="12"></line>
+                        <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line>
+                        <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line>
+                    </svg>
+                    <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 8.5 8.5 0 1 0 21 14.5Z"></path>
+                    </svg>
+                </button>
+            </li>
         </ul>
     </nav>
 
@@ -24,12 +42,13 @@
                 <h1>Reimagining User experiences and Building intuitive user interfaces with technology.</h1>
                 <div>
                 <h2>Hello, I'm Bharadwaj</h2>
-                <p class="tag">Student Designer</p>
-                <span class="hero-badge">Open to internships</span>
+                <p class="tag">
+                    Student Designer &middot;<span class="hero-badge">Open to internships and Work</span>
+                </p>
                 </div>
                 <div class="hero-actions">
-                    <a class="btn" href="#gallery">See Projects</a>
-                    <a class="btn outline" href="#contact">Contact Me</a>
+                    <a class="btn" href="#projects">See Projects</a>
+                    <a class="btn outline" href="contact.html">Contact Me</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -56,7 +75,7 @@
             <div class="card-row">
                 <article class="card">
                     <h3>UX/UI Design</h3>
-                    <p>Discover patterns and problems and design intuitive user experience solutions and interfaces.</p>
+                    <p>Discover patterns and problems to design intuitive user experience solutions and interfaces.</p>
                 </article>
                 <article class="card">
                     <h3>Front-end Demos</h3>
@@ -69,114 +88,63 @@
             </div>
         </section>
 
-        <section class="gallery" id="gallery">
-            <div class="gallery-head">
-                <h2>Project gallery</h2>
-                <p>Small wins that helped me practice the grid layout.</p>
-            </div>
-            <div class="gallery-grid">
-            </div>
-        </section>
-
         <section class="skills" id="skills">
-            <h2>Cureent Skill Stack</h2>
+            <h2>Skill domains</h2>
+            <p>The full tool stack now lives on the About page. This overview will soon animate into buckets so you can see how each skill supports the others.</p>
             <div class="skill-table">
-                <div class="skill-row">
-                    <span>UX/UI Design</span>
+                <div class="skill-row">Product discovery & UX strategy</div>
+                <div class="skill-row">Interface systems & Figma components</div>
+                <div class="skill-row">Front-end prototyping & MERN fundamentals</div>
+                <div class="skill-row">Fundamental Programming with C++ and Python</div>
+                <div class="skill-row">Game design, Unity, and 3D storytelling</div>
+                <div class="skill-row">Automation & scripting for experimentation</div>
+            </div>
+        </section>
+        <section class="featured-projects" id="projects">
+            <div class="section-head">
+                <div>
+                    <h2>Project highlights</h2>
+                    <p>A quick peek at the builds I am polishing right now.</p>
                 </div>
-                <div class="skill-row">
-                    <span>Figma</span>
-                </div>
-                <div class="skill-row">
-                    <span>Web Design</span>
-                </div>
-                <div class="skill-row">
-                    <span>Application Design</span>
-                </div>
-                <div class="skill-row">
-                    <span>Front-end Design</span>
-                </div>
-                <div class="skill-row">
-                    <span>Mern Stack Development</span>
-                </div>
-                <div class="skill-row">
-                    <span>Game Design</span>
-                </div>
-                <div class="skill-row">
-                    <span>Unity Game Development(C#)</span>
-                </div>
-                <div class="skill-row">
-                    <span>Blender</span>
-                </div>
-                <div class="skill-row">
-                    <span>C++</span>
-                </div>
-                <div class="skill-row">
-                    <span>Python</span>
-                </div>
-                <div class="skill-row">
-                    <span></span>
-                </div>
+                <a class="inline-link" href="projects.html">Browse the full gallery</a>
+            </div>
+            <div class="featured-grid">
+                <article class="featured-card">
+                    <img src="https://via.placeholder.com/320x200" alt="Notebook with UI sketches">
+                    <p class="tag-chip">UX/UI</p>
+                    <h3>Campus commute planner</h3>
+                    <p>Research-backed case study focussed on simplifying shuttle bookings for new students.</p>
+                    <a href="projects.html#ux-ui" class="inline-link">View case studies</a>
+                </article>
+                <article class="featured-card">
+                    <img src="https://via.placeholder.com/320x200" alt="Code editor screenshot">
+                    <p class="tag-chip">Development</p>
+                    <h3>Starter task manager</h3>
+                    <p>Full stack MERN practice project with clean components, auth, and responsive charts.</p>
+                    <a href="projects.html#dev" class="inline-link">See dev builds</a>
+                </article>
+                <article class="featured-card">
+                    <img src="https://via.placeholder.com/320x200" alt="3D scene render preview">
+                    <p class="tag-chip">Game & 3D</p>
+                    <h3>Low-poly puzzle world</h3>
+                    <p>Unity prototype plus Blender assets for an exploration game with modular levels.</p>
+                    <a href="projects.html#games" class="inline-link">Explore gameplay</a>
+                </article>
             </div>
         </section>
 
-        <section class="contact" id="contact">
-            <h2>Contact me</h2>
-            <p>Send me a quick message so I can reply with my availability.</p>
-            <form id="contact-form" novalidate>
-                <label>
-                    Name
-                    <input type="text" name="name" required minlength="2">
-                </label>
-                <label>
-                    Email
-                    <input type="email" name="email" required>
-                </label>
-                <label>
-                    Message
-                    <textarea name="message" rows="4" required></textarea>
-                </label>
-                <button type="submit" class="btn">Send Message</button>
-                <p id="form-status" role="status" aria-live="polite"></p>
-            </form>
-        </section>
+
     </main>
 
     <footer>
-        <p>Made by Bharadwaj &mdash; 2026</p>
+        <p>Bharadwaj Karthikeya &middot; UX/UI & Front-end student</p>
         <div class="social-links">
-            <a href="https://github.com" aria-label="GitHub">GH</a>
-            <a href="https://www.linkedin.com" aria-label="LinkedIn">IN</a>
-            <a href="mailto:hello@example.com" aria-label="Email">@</a>
+            <a href="https://github.com/Bharadwaj-Karthikeya" aria-label="GitHub">GH</a>
+            <a href="https://www.linkedin.com/in/bharadwaj-karthikeya" aria-label="LinkedIn">IN</a>
+            <a href="https://www.behance.net/bharadwaj_karthikeya" aria-label="LinkedIn">BE</a>
+            <a href="mailto:pbk311205@gmail.com" aria-label="Email">@</a>
         </div>
+        <p class="footer-note">Based in Hyderabad, India &middot; hello@example.com</p>
     </footer>
-
-    <script>
-        const form = document.getElementById('contact-form');
-        const statusBox = document.getElementById('form-status');
-
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            const nameValue = form.name.value.trim();
-            const emailValue = form.email.value.trim();
-            const messageValue = form.message.value.trim();
-
-            if (!nameValue || !emailValue || !messageValue) {
-                statusBox.textContent = 'Please fill in all fields before sending.';
-                statusBox.className = 'error';
-                return;
-            }
-
-            if (!emailValue.includes('@')) {
-                statusBox.textContent = 'Email must include the @ symbol.';
-                statusBox.className = 'error';
-                return;
-            }
-
-            statusBox.textContent = 'Thanks! I will reply soon.';
-            statusBox.className = 'success';
-            form.reset();
-        });
-    </script>
 </body>
 </html>
