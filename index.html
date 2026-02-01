@@ -4,78 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bharadwaj's Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-        }
-        nav{
-            background-color: #1138c6; 
-            padding: 10px; 
-            display: flex; 
-            justify-content: end; 
-        }
-        nav ul{
-            list-style-type: none; 
-            display: flex; 
-            gap: 20px; 
-            color: white; 
-            font-weight: bold; 
-            padding-right: 120px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        hero {
-            text-align: left;
-            padding: 50px 40px;
-            background-color: #e2e2e2;
-            
-        }
-        hero h1 {
-            width: 50%;
-            font-size: 2.5em;
-        }
-        hero p {
-            font-size: 1.2em;
-        }
-        section {
-            width: 40%;
-            padding: 25px;
-            margin: 20px;
-            background-color: white;
-            border-radius: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul marker="none" >
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <nav class="site-nav">
+        <img src="Bharadwaj-logo.png" alt="Bharadwaj's Logo" class="logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><button><img src="https://www.flaticon.com/free-icons/moonlight" alt="Toggle Dark Mode" class="theme"></button></li>
         </ul>
     </nav>
-    <hero>
-        <h1>Reimagining UX through designs and developing creative UI with technology</h1>
-        <p> I'm Bharadwaj</p>
-        <p> 
-            A passionate UX/UI designer with a knack for technology and game development.
-        </p>
-    </hero>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a dedicated UX/UI designer with experience in creating user-friendly designs and developing engaging user interfaces. My passion lies in blending creativity with technology trying to always deliver exceptional user experiences.</p>
-    </section>
 
+    <main class="home-grid">
+        <section class="hero" id="hero">
+            <div class="hero-text">
+                <h1>Reimagining User experiences and Building intuitive user interfaces with technology.</h1>
+                <div>
+                <h2>Hello, I'm Bharadwaj</h2>
+                <p class="tag">Student Designer</p>
+                <span class="hero-badge">Open to internships</span>
+                </div>
+                <div class="hero-actions">
+                    <a class="btn" href="#gallery">See Projects</a>
+                    <a class="btn outline" href="#contact">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="laptop">
+                        <div class="screen"></div>
+                        <div class="keyboard"></div>
+                    </div>
+                    <div class="orbit orbit-one">
+                        <span class="bubble">UX/UI Design</span>
+                    </div>
+                    <div class="orbit orbit-two">
+                        <span class="bubble">Full Stack <br>Web Dev</span>
+                    </div>
+                    <div class="orbit orbit-three">
+                        <span class="bubble">Game Design & Dev</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cards" id="highlights">
+            <h2>What I build</h2>
+            <div class="card-row">
+                <article class="card">
+                    <h3>UX/UI Design</h3>
+                    <p>Discover patterns and problems and design intuitive user experience solutions and interfaces.</p>
+                </article>
+                <article class="card">
+                    <h3>Front-end Demos</h3>
+                    <p>Build mini apps that focus on clean structure, basic animations, and solid design principles.</p>
+                </article>
+                <article class="card">
+                    <h3>Game Design & 3D modelling</h3>
+                    <p>Design engaging game mechanics and models and develop interactive experiences.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="gallery" id="gallery">
+            <div class="gallery-head">
+                <h2>Project gallery</h2>
+                <p>Small wins that helped me practice the grid layout.</p>
+            </div>
+            <div class="gallery-grid">
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <h2>Cureent Skill Stack</h2>
+            <div class="skill-table">
+                <div class="skill-row">
+                    <span>UX/UI Design</span>
+                </div>
+                <div class="skill-row">
+                    <span>Figma</span>
+                </div>
+                <div class="skill-row">
+                    <span>Web Design</span>
+                </div>
+                <div class="skill-row">
+                    <span>Application Design</span>
+                </div>
+                <div class="skill-row">
+                    <span>Front-end Design</span>
+                </div>
+                <div class="skill-row">
+                    <span>Mern Stack Development</span>
+                </div>
+                <div class="skill-row">
+                    <span>Game Design</span>
+                </div>
+                <div class="skill-row">
+                    <span>Unity Game Development(C#)</span>
+                </div>
+                <div class="skill-row">
+                    <span>Blender</span>
+                </div>
+                <div class="skill-row">
+                    <span>C++</span>
+                </div>
+                <div class="skill-row">
+                    <span>Python</span>
+                </div>
+                <div class="skill-row">
+                    <span></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Contact me</h2>
+            <p>Send me a quick message so I can reply with my availability.</p>
+            <form id="contact-form" novalidate>
+                <label>
+                    Name
+                    <input type="text" name="name" required minlength="2">
+                </label>
+                <label>
+                    Email
+                    <input type="email" name="email" required>
+                </label>
+                <label>
+                    Message
+                    <textarea name="message" rows="4" required></textarea>
+                </label>
+                <button type="submit" class="btn">Send Message</button>
+                <p id="form-status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made by Bharadwaj &mdash; 2026</p>
+        <div class="social-links">
+            <a href="https://github.com" aria-label="GitHub">GH</a>
+            <a href="https://www.linkedin.com" aria-label="LinkedIn">IN</a>
+            <a href="mailto:hello@example.com" aria-label="Email">@</a>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const statusBox = document.getElementById('form-status');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const nameValue = form.name.value.trim();
+            const emailValue = form.email.value.trim();
+            const messageValue = form.message.value.trim();
+
+            if (!nameValue || !emailValue || !messageValue) {
+                statusBox.textContent = 'Please fill in all fields before sending.';
+                statusBox.className = 'error';
+                return;
+            }
+
+            if (!emailValue.includes('@')) {
+                statusBox.textContent = 'Email must include the @ symbol.';
+                statusBox.className = 'error';
+                return;
+            }
+
+            statusBox.textContent = 'Thanks! I will reply soon.';
+            statusBox.className = 'success';
+            form.reset();
+        });
+    </script>
 </body>
 </html>
