@@ -500,7 +500,7 @@ footer {
 .project-card {
     flex: 0 0 25rem;
     width: 25rem;
-    background: #fff;
+    background: var(--card);
     border-radius: var(--radius);
     border: 0.0625rem solid var(--accent-light);
     padding: 1rem;
