@@ -17,14 +17,7 @@ Structure
 
 Local Preview
 -------------
-Use any static server (e.g., `npx serve`, `python -m http.server`, or VS Code Live Server) from the project root to preview the site locally. Open `index.html` in the browser once the server is running.
-
-Contributing
-------------
-1. Create a new branch for your update.
-2. Make and test changes locally.
-3. Run `git status` to review modifications and ensure only intended files are staged.
-4. Commit with a concise message and open a pull request if collaborating.
+ Open `https://bharadwaj-karthikeya.github.io/Portfolio` in the browser.
 
 Notes
 -----
