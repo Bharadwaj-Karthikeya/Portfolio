@@ -9,8 +9,14 @@
 </head>
 <body>
     <nav class="site-nav">
-        <img src="media/Bharadwaj-logo.png" alt="Bharadwaj's Logo" class="logo">
-        <ul>
+        <a class="logo-link" href="index.html">
+            <img src="media/Bharadwaj-logo.png" alt="Bharadwaj's Logo" class="logo">
+        </a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav">
+        <label class="nav-toggle-btn" for="nav-toggle">
+            <span aria-hidden="true"></span>
+        </label>
+        <ul id="primary-nav" class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
