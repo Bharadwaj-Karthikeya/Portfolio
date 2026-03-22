@@ -1,4 +1,4 @@
-
+import { motion } from "framer-motion";
 import { heroOrbits } from "../content/home.js";
 import { socialLinks } from "../content/socials.js";
 import { useTheme } from "../context/ThemeContext.jsx";
@@ -40,7 +40,9 @@ export default function HeroIntro() {
             technology.
           </motion.h1>
           <motion.div variants={heroVariants} className="space-y-1 text-text">
-            <p className="text-lg font-semibold">Hello, I&apos;m Bharadwaj Karthikeya</p>
+            <p className="text-lg font-semibold">
+              Hello, I&apos;m Bharadwaj Karthikeya
+            </p>
             <p className="text-base text-muted">
               UX/UI Designer ·{" "}
               <span className="rounded-pill bg-accent-soft px-3 py-1 text-sm font-semibold text-text">
