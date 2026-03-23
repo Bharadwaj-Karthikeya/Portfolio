@@ -118,7 +118,7 @@ const skillDomainCards = [
       "Journey / service mapping",
       "Case Study Writing & Design",
       "Design Thinking",
-      
+
     ],
     tools: ["Figma", "Miro", "Balsamiq", "Material UI", "Notion"],
   },
@@ -373,7 +373,7 @@ export default function SinglePage() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-32 md:gap-40 mx-auto mt-[-60px]" data-page="single">
+    <div className="flex flex-col gap-32 md:gap-40 mx-auto mt-[-64px]" data-page="single">
       <HeroIntro />
 
       {/* ABOUT SECTION */}

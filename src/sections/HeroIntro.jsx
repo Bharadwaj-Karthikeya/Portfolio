@@ -43,7 +43,7 @@ export default function HeroIntro() {
             variants={heroVariants}
             className="text-3xl font-black tracking-tight text-text md:text-5xl lg:text-[3rem] leading-[1.05]"
           >
-            Reimagining <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-strong pr-2">user experiences</span> and building <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-accent-strong to-accent pr-2">intuitive interfaces</span> with technology.
+            Reimagining <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-strong animate-pulse pr-2">user experiences</span> and building <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-accent-strong to-accent animate-pulse pr-2">intuitive interfaces</span> with technology.
           </motion.h1>
 
           <motion.div variants={heroVariants} className="space-y-3">
@@ -152,7 +152,7 @@ export default function HeroIntro() {
             );
           })}
           
-          <div className="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] lg:w-[500px] lg:h-[500px] p-2 group z-10 flex items-center justify-center">
+          <div className="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] lg:w-[400px] lg:h-[400px] p-2 group z-10 flex items-center justify-center">
              {/* Glow effect behind */}
              <div className="absolute inset-0  bg-gradient-to-tr from-accent to-accent-strong opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"></div>
              
