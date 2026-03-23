@@ -65,6 +65,11 @@ export const csSkills = [
     icon: "https://cdn.simpleicons.org/vercel/000000",
   },
   {
+    label: "Render",
+    id: "render",
+    icon: "https://cdn.simpleicons.org/render/000000",
+  },
+  {
     label: "GitHub",
     id: "github",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",

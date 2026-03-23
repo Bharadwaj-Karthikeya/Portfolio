@@ -5,70 +5,78 @@ import { useTheme } from "../context/ThemeContext.jsx";
 
 const heroVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
 };
 
 export default function HeroIntro() {
   const { theme } = useTheme();
   const orbitConfigs = [
-    { top: "-16%", left: "65%", delay: 0 },
-    { top: "38%", left: "-10%", delay: 0.2 },
-    { top: "115%", left: "52%", delay: 0.4 },
+    { top: "-5%", left: "75%", delay: 0 },
+    { top: "25%", left: "-15%", delay: 0.2 },
+    { top: "100%", left: "45%", delay: 0.4 },
   ];
-  const resumeHref = "/media/Bharadwaj-Karthikeya-Resume.pdf";
+  const resumeHref = "/media/BharadwajCV_2026.pdf";
 
   return (
-    <section id="hero" className="section-shell border-none overflow-hidden">
-      <div className="flex flex-col gap-10 lg:flex-row lg:items-center">
+    <section id="hero" className="section-shell border-none overflow-hidden flex min-h-[90vh] items-center">
+      <div className="flex flex-col gap-16 lg:flex-row lg:items-center w-full mx-auto ">
+        
+        {/* Left Side: Text and CTA */}
         <motion.div
-          className="flex-1 space-y-6"
+          className="flex-1 space-y-8 z-10"
           initial="hidden"
           animate="visible"
-          transition={{ staggerChildren: 0.1 }}
+          transition={{ staggerChildren: 0.15 }}
         >
-          <motion.p
-            variants={heroVariants}
-            className="text-xs font-semibold uppercase tracking-[0.3em] text-accent"
-          >
-            Portfolio · Home
-          </motion.p>
+          {/* Status Indicator */}
+          <motion.div variants={heroVariants} className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-surface border border-text/5 shadow-sm">
+             <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+             </span>
+             <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-text">
+               Open to internships & freelance & full time  
+             </p>
+          </motion.div>
+
           <motion.h1
             variants={heroVariants}
-            className="text-3xl font-semibold text-text md:text-4xl"
+            className="text-3xl font-black tracking-tight text-text md:text-5xl lg:text-[3rem] leading-[1.05]"
           >
-            Reimagining user experiences and building intuitive interfaces with
-            technology.
+            Reimagining <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-strong pr-2">user experiences</span> and building <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-accent-strong to-accent pr-2">intuitive interfaces</span> with technology.
           </motion.h1>
-          <motion.div variants={heroVariants} className="space-y-1 text-text">
-            <p className="text-lg font-semibold">
+
+          <motion.div variants={heroVariants} className="space-y-3">
+            <p className="text-2xl font-bold text-text">
               Hello, I&apos;m Bharadwaj Karthikeya
             </p>
-            <p className="text-base text-muted">
-              UX/UI Designer ·{" "}
-              <span className="rounded-pill bg-accent-soft px-3 py-1 text-sm font-semibold text-text">
-                Open to internships and work
-              </span>
-            </p>
+            <div className="inline-flex flex-wrap items-center gap-2 text-base font-semibold text-muted bg-card-soft px-5 py-2.5 rounded-full shadow-sm border border-text/5">
+              <span>UX/UI Designer</span>
+              <span className="text-accent">•</span>
+              <span>Full Stack Web Developer</span>
+              <span className="text-accent">•</span>
+              <span>Game Developer</span>
+            </div>
           </motion.div>
+
           <motion.p
             variants={heroVariants}
-            className="max-w-xl text-base text-muted"
+            className="max-w-xl text-lg text-muted font-medium leading-relaxed"
           >
-            I sketch flows, test quick prototypes with peers for projects, and
-            then build the solutions with clean HTML/CSS/JS so feedback turns
-            into a tangible experience fast.
+            I sketch flows, make quick prototypes with peers for projects, and then build the solutions with clean HTML/CSS/JS so feedback turns into a tangible experience fast.
           </motion.p>
-          <motion.div variants={heroVariants} className="flex flex-wrap gap-4">
+
+          <motion.div variants={heroVariants} className="flex flex-wrap items-center gap-5 pt-4">
             <a
               href={resumeHref}
               download
-              className={`rounded-pill bg-accent px-5 py-3 text-base font-semibold text-white transition hover:-translate-y-0.5`}
+              className="px-8 py-4 bg-text text-canvas rounded-full font-bold text-base transition-transform hover:scale-105 shadow-xl hover:shadow-2xl"
             >
               Download Resume
             </a>
             <a
               href="#connect"
-              className="rounded-pill border border-accent px-5 py-3 text-base font-semibold text-accent transition hover:-translate-y-0.5"
+              className="group flex items-center gap-3 px-8 py-4 bg-surface text-text rounded-full font-bold text-base transition-all hover:bg-card hover:-translate-y-1 shadow-sm border border-text/5"
               onClick={(event) => {
                 event.preventDefault();
                 const target = document.getElementById("connect");
@@ -77,12 +85,13 @@ export default function HeroIntro() {
                 }
               }}
             >
-              Contact Me
+              Let&apos;s Talk <span className="group-hover:translate-x-1 transition-transform">→</span>
             </a>
           </motion.div>
+
           <motion.div
             variants={heroVariants}
-            className="flex flex-wrap gap-3 text-sm font-semibold text-text"
+            className="flex flex-wrap gap-4 pt-4"
           >
             {socialLinks.map((social) => (
               <a
@@ -90,36 +99,24 @@ export default function HeroIntro() {
                 href={social.href}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center gap-2 rounded-full border px-2 py-2 text-xs uppercase tracking-[0.3em] text-text  hover:bg-accent-soft "
-                style={{
-                  borderColor:
-                    theme === "dark"
-                      ? "rgba(255, 255, 255, 0.25)"
-                      : "rgba(31, 26, 50, 0.25)",
-                  backgroundColor:
-                    theme === "dark"
-                      ? "rgba(20, 15, 50, 0.45)"
-                      : "rgba(255, 255, 255, 0.6)",
-                }}
+                className="group flex items-center justify-center h-12 w-12 rounded-full bg-card shadow-sm border border-text/5 hover:border-accent hover:-translate-y-1 transition-all"
               >
-                {social.icon && (
-                  <img
-                    src={social.icon}
-                    alt={`${social.label} icon`}
-                    className={`h-8 w-8  ${theme === "dark" && social.label !== "Email" && social.label !== "LinkedIn" ? "invert" : ""} `}
-                    loading="lazy"
-                  />
-                )}
+                <img
+                  src={social.icon}
+                  alt={social.label}
+                  className={`h-8 w-8 object-contain opacity-70 group-hover:opacity-100 transition-opacity ${theme === "dark" && social.label !== "Email" && social.label !== "LinkedIn" ? "invert" : ""}`}
+                />
               </a>
             ))}
           </motion.div>
         </motion.div>
 
+        {/* Right Side: Image and Orbits */}
         <motion.div
-          className="relative flex flex-1 justify-center"
-          initial={{ opacity: 0, scale: 0.9 }}
+          className="relative flex flex-1 justify-center items-center py-10"
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
           {heroOrbits.map((label, index) => {
             const config = orbitConfigs[index] ?? {
@@ -130,21 +127,18 @@ export default function HeroIntro() {
             return (
               <motion.span
                 key={label}
-                className="absolute inline-flex items-center justify-center rounded-pill border border-white/30 px-4 py-1 text-xs font-semibold text-text shadow-glass"
+                className="absolute inline-flex items-center justify-center rounded-full border border-text/10 backdrop-blur-md px-6 py-2.5 text-xs font-bold uppercase tracking-widest text-text shadow-xl z-20 pointer-events-none"
                 style={{
                   top: config.top,
                   left: config.left,
                   backgroundColor:
                     theme === "dark"
-                      ? "rgba(20, 15, 50, 0.9)"
-                      : "rgba(255, 255, 255, 0.9)",
+                      ? "rgba(20, 15, 50, 0.4)"
+                      : "rgba(255, 255, 255, 0.4)",
                 }}
-                initial={{ opacity: 1, scale: 0.85 }}
                 animate={{
-                  opacity: 1,
-                  scale: [1, 1.05, 1],
-                  y: [0, -6, 0],
-                  x: [0, 4, 0],
+                  y: [0, -15, 0],
+                  x: [0, 10, 0],
                 }}
                 transition={{
                   duration: 6 + index,
@@ -157,14 +151,19 @@ export default function HeroIntro() {
               </motion.span>
             );
           })}
-          <div className="relative h-80 w-72 max-w-full rounded-[2.5rem] border border-white/10 bg-[rgba(255,255,255,0.12)] p-4 shadow-glass">
-            <div className="absolute inset-4 rounded-[2rem] bg-card-soft p-4 backdrop-blur">
-              <img
-                src="/media/selfimage.jpg"
-                alt="Bharadwaj portrait"
-                className="h-full w-full rounded-[1.5rem] object-cover"
-              />
-            </div>
+          
+          <div className="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] lg:w-[500px] lg:h-[500px] p-2 group z-10 flex items-center justify-center">
+             {/* Glow effect behind */}
+             <div className="absolute inset-0  bg-gradient-to-tr from-accent to-accent-strong opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"></div>
+             
+             {/* Image container */}
+             <div className="relative w-full h-full rounded-pill overflow-hidden border-8 border-surface shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
+                <img
+                  src="/media/portfolioSelfImage.png"
+                  alt="Bharadwaj portrait"
+                  className="w-full h-full object-cover"
+                />
+             </div>
           </div>
         </motion.div>
       </div>

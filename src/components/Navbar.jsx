@@ -59,7 +59,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-4 z-50 w-full px-4 ">
       <div
-        className={`mx-auto flex w-[min(1120px,100%)] h-16 items-center justify-between rounded-pill border border-white/10 px-6 py-3 backdrop-blur-xl ${containerStyles}`}
+        className={`mx-auto flex w-[min(1120px,100%)] h-16 items-center justify-between rounded-pill border border-black/5 dark:border-white/10 px-6 py-3 backdrop-blur-xl ${containerStyles}`}
       >
         <a
           href="#hero"
@@ -67,11 +67,7 @@ export default function Navbar() {
           onClick={(event) => handleNavClick(event, { sectionId: "hero" })}
         >
           <span className="flex  items-center justify-center rounded-full   bg-card-soft/60 ">
-            <img
-              src="/media/Bharadwaj-logo.png"
-              alt="Bharadwaj logo"
-              className={`h-8 w-fit  ${theme === "light" ? "invert" : ""}`}
-            />
+            <span className={`text-2xl font-bold italic ${theme === "light" ? "text-text" : "text-white"}`}>Bharadwaj.</span>
           </span>
         </a>
 
@@ -94,7 +90,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="flex h-11 w-11 items-center justify-center rounded-pill border border-white/20 text-current lg:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-pill border border-black/10 dark:border-white/20 text-current lg:hidden"
           onClick={() => setOpen((prev) => !prev)}
           aria-label="Toggle navigation"
           aria-expanded={open}
@@ -115,7 +111,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="mx-auto mt-3 w-[min(1120px,100%)] rounded-2xl border border-white/10 bg-card-soft p-4 shadow-glass lg:hidden">
+        <div className="mx-auto mt-3 w-[min(1120px,100%)] rounded-2xl border border-black/5 dark:border-white/10 bg-card-soft p-4 shadow-glass lg:hidden">
           <ul className="flex flex-col gap-3 text-text">
             {navLinks.map((item) => (
               <li key={item.sectionId}>

@@ -11,18 +11,18 @@
   --font-secondary:
     "General Sans", "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  --color-canvas: #fdfaf4;
-  --color-surface: #f7efd9;
-  --color-card: #fffdf9;
-  --color-card-soft: rgba(255, 253, 249, 0.92);
-  --color-surface-soft: rgba(247, 231, 201, 0.6);
-  --color-text: #1f1a32;
-  --color-muted: rgba(31, 26, 50, 0.68);
-  --color-accent: #f3c05f;
-  --color-accent-soft: rgba(243, 192, 95, 0.18);
-  --color-accent-strong: #e39b32;
-  --shadow-soft: 0 25px 65px rgba(227, 155, 50, 0.2);
-  --shadow-dark: 0 25px 55px rgba(17, 12, 55, 0.42);
+  --color-canvas: #fffaf0; /* floral white, very sunny light background */
+  --color-surface: #f8efd7; /* soft sandy yellow */
+  --color-card: #ffffff; /* crisp white for contrast */
+  --color-card-soft: rgba(255, 255, 255, 0.92);
+  --color-surface-soft: rgba(254, 240, 206, 0.65);
+  --color-text: #2c241b; /* warm dark tone for text */
+  --color-muted: rgba(44, 36, 27, 0.75);
+  --color-accent: #ffb347; /* bright sunny orange-yellow */
+  --color-accent-soft: rgba(255, 179, 71, 0.22);
+  --color-accent-strong: #ff8c00; /* vibrant dark orange */
+  --shadow-soft: 0 25px 65px rgba(255, 140, 0, 0.15);
+  --shadow-dark: 0 25px 55px rgba(44, 36, 27, 0.12);
 }
 
 :root[data-theme="dark"] {
@@ -87,7 +87,18 @@
       linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.12));
     opacity: 0.7;
     pointer-events: none;
+    z-index: -2;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
     z-index: -1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    mix-blend-mode: overlay;
   }
 
   img {
@@ -246,7 +257,7 @@
     height: 3rem;
     border: 1px solid var(--color-accent);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.04);
     padding: 0.35rem;
     overflow: visible;
     z-index: 1;
@@ -259,6 +270,10 @@
 
   .tool-chip img {
     flex-shrink: 0;
+  }
+
+  [data-theme="dark"] .tool-chip {
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .auto-dark-invert {
@@ -312,8 +327,8 @@
     gap: 0.3rem;
     padding: 0.35rem 0.9rem;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.04);
     font-size: 0.65rem;
     font-weight: 600;
     letter-spacing: 0.18em;
@@ -332,6 +347,11 @@
     border-radius: 999px;
     background: var(--color-accent-strong);
     opacity: 0.6;
+  }
+
+  [data-theme="dark"] .project-tag {
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .project-tag:hover {
