@@ -347,23 +347,32 @@ export default function SinglePage() {
 
   const handleSubmit = useCallback(async (event) => {
     event.preventDefault();
-    if (!formRef.current) {
+    if (!formRef.current) return;
+
+    // Explicit manual validation check
+    const formData = new FormData(formRef.current);
+    const name = formData.get("user_name");
+    const email = formData.get("user_email");
+    const message = formData.get("message");
+
+    if (!name?.trim() || !email?.trim() || !message?.trim() || !formRef.current.checkValidity()) {
+      formRef.current.reportValidity();
       return;
     }
 
     try {
       setStatus("sending");
       await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID ?? "service_hi1b5ze",
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? "template_default",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
         {
           publicKey:
-            import.meta.env.VITE_EMAILJS_PUBLIC_KEY ?? "zQRRu5e09yRjqSyqR",
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
         },
       );
       formRef.current.reset();
-    setStatus("sent");
+      setStatus("sent");
     } catch (error) {
       console.error("Failed to send message", error);
       setStatus("error");
@@ -373,7 +382,7 @@ export default function SinglePage() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-32 md:gap-40 mx-auto mt-[-64px]" data-page="single">
+    <div className="flex flex-col gap-20 sm:gap-32 md:gap-40 mx-auto md:mt-[-64px] " data-page="single">
       <HeroIntro />
 
       {/* ABOUT SECTION */}
@@ -445,7 +454,7 @@ export default function SinglePage() {
                     {resolvedTools.map(tool => (
                       <div key={tool.id} className="group relative flex items-center justify-center w-[4.5rem] h-[4.5rem] rounded-[1.5rem] rotate-3 bg-accent-soft shadow-2xl border border-text/5 hover:border-accent hover:rotate-0 hover:-translate-y-3 transition-all duration-300">
                          <img src={tool.icon} alt={tool.label} className={`w-8 h-8 object-contain ${tool.invertOnDark ? "auto-dark-invert" : ""}`} />
-                         <span className="absolute -bottom-16 opacity-0  group-hover:opacity-100 transition-opacity duration-300 bg-text text-canvas text-[0.65rem] font-bold px-3 py-1.5 rounded-full whitespace-nowrap shadow-xl flex z-20 pointer-events-none">{tool.label}</span>
+                         <span className="absolute -bottom-8 md:-bottom-12 opacity-0  group-hover:opacity-100 transition-opacity duration-300 bg-text text-canvas text-[0.65rem] font-bold px-3 py-1.5 rounded-full whitespace-nowrap shadow-xl flex z-20 pointer-events-none">{tool.label}</span>
                       </div>
                     ))}
                  </div>
@@ -468,12 +477,12 @@ export default function SinglePage() {
            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-text tracking-tight">Experience & Education.</h2>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 relative before:absolute before:inset-y-0 before:left-1/2 before:-translate-x-1/2 before:w-[2px] before:bg-gradient-to-b before:from-transparent before:via-text/10 before:to-transparent before:hidden lg:before:block">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-32 relative before:absolute before:inset-y-0 before:left-1/2 before:-translate-x-1/2 before:w-[2px] before:bg-gradient-to-b before:from-transparent before:via-text/10 before:to-transparent before:hidden lg:before:block">
            {/* Left Column: Training & Academics */}
-           <div className="space-y-24">
+           <div className="space-y-12 lg:space-y-24">
               <div>
-                <h3 className="text-xl font-bold uppercase tracking-[0.2em] text-accent text-center lg:text-right mb-12">Training</h3>
-                <div className="space-y-16">
+                <h3 className="text-xl font-bold uppercase tracking-[0.2em] text-accent text-center lg:text-right mb-8 lg:mb-12">Training</h3>
+                <div className="space-y-12 lg:space-y-16">
                   {trainingPrograms.map(training => (
                     <motion.div variants={itemVariants} key={training.title} className="relative group pl-8 lg:pl-0 lg:pr-16 lg:text-right hover-lift">
                        {/* Marker */}
@@ -488,8 +497,8 @@ export default function SinglePage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold uppercase tracking-[0.2em] text-accent text-center lg:text-right mb-12">Academics</h3>
-                <div className="space-y-16">
+                <h3 className="text-xl font-bold uppercase tracking-[0.2em] text-accent text-center lg:text-right mb-8 lg:mb-12">Academics</h3>
+                <div className="space-y-12 lg:space-y-16">
                   {educationHistory.map((entry) => (
                     <motion.div variants={itemVariants} key={entry.school} className="relative group pl-8 lg:pl-0 lg:pr-16 lg:text-right hover-lift">
                        <div className="absolute left-0 lg:left-auto lg:-right-[0.4rem] top-3 w-4 h-4 rounded-full bg-surface-soft ring-4 ring-text shadow-sm hidden lg:block z-10"></div>
@@ -507,10 +516,10 @@ export default function SinglePage() {
            </div>
 
            {/* Right Column: Leadership & Certifications */}
-           <div className="space-y-24 mt-16 lg:mt-32">
+           <div className="space-y-12 lg:space-y-24 mt-0 lg:mt-32">
               <div>
-                <h3 className="text-xl font-bold uppercase tracking-[0.2em] text-accent text-center lg:text-left mb-12">Leadership & Roles</h3>
-                <div className="space-y-16">
+                <h3 className="text-xl font-bold uppercase tracking-[0.2em] text-accent text-center lg:text-left mb-8 lg:mb-12">Leadership & Roles</h3>
+                <div className="space-y-12 lg:space-y-16">
                   {experienceItems.map((item) => (
                     <motion.div variants={itemVariants} key={item.title} className="relative group pl-8 lg:pl-16 lg:text-left hover-lift">
                        {/* Marker */}
@@ -525,8 +534,8 @@ export default function SinglePage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold uppercase tracking-[0.2em] text-accent text-center lg:text-left mb-12">Certifications</h3>
-                <div className="space-y-16">
+                <h3 className="text-xl font-bold uppercase tracking-[0.2em] text-accent text-center lg:text-left mb-8 lg:mb-12">Certifications</h3>
+                <div className="space-y-12 lg:space-y-16">
                   {certificationsList.map(cert => (
                     <motion.div variants={itemVariants} key={cert.title} className="relative group pl-8 lg:pl-16 lg:text-left hover-lift">
                        {/* Marker */}

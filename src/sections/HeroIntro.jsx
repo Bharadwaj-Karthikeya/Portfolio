@@ -12,7 +12,7 @@ export default function HeroIntro() {
   const { theme } = useTheme();
   const orbitConfigs = [
     { top: "-5%", left: "75%", delay: 0 },
-    { top: "25%", left: "-15%", delay: 0.2 },
+    { top: "25%", left: "-5%", delay: 0.2 },
     { top: "100%", left: "45%", delay: 0.4 },
   ];
   const resumeHref = "/media/BharadwajCV_2026.pdf";
@@ -50,9 +50,9 @@ export default function HeroIntro() {
             <p className="text-2xl font-bold text-text">
               Hello, I&apos;m Bharadwaj Karthikeya
             </p>
-            <div className="inline-flex flex-wrap items-center gap-2 text-base font-semibold text-muted bg-card-soft px-5 py-2.5 rounded-full shadow-sm border border-text/5">
+            <div className="inline-flex flex-wrap items-center gap-2 text-xs md:text-base font-semibold text-muted bg-card-soft px-5 py-2.5 rounded-full shadow-sm border border-text/5">
               <span>UX/UI Designer</span>
-              <span className="text-accent">•</span>
+              <span className="text-accent">•</span>  
               <span>Full Stack Web Developer</span>
               <span className="text-accent">•</span>
               <span>Game Developer</span>

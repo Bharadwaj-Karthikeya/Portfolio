@@ -111,7 +111,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="mx-auto mt-3 w-[min(1120px,100%)] rounded-2xl border border-black/5 dark:border-white/10 bg-card-soft p-4 shadow-glass lg:hidden">
+        <div className="mx-auto mt-3 w-[min(1120px,100%)] rounded-2xl border border-black/5 dark:border-white/10 bg-card-soft p-4 shadow-glass lg:hidden flex flex-col items-center text-center">
           <ul className="flex flex-col gap-3 text-text">
             {navLinks.map((item) => (
               <li key={item.sectionId}>
@@ -125,7 +125,7 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <ThemeToggle className="mt-4 w-full justify-center" />
+          <ThemeToggle className="mt-4 w-fit justify-center" />
         </div>
       )}
     </header>
