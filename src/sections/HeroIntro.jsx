@@ -157,7 +157,7 @@ export default function HeroIntro() {
              <div className="absolute inset-0  bg-gradient-to-tr from-accent to-accent-strong opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"></div>
              
              {/* Image container */}
-             <div className="relative w-full h-full rounded-pill overflow-hidden border-8 border-surface shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
+             <div className="relative w-full h-full rounded-[4rem] overflow-hidden border-8 border-surface shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
                 <img
                   src="/media/portfolioSelfImage.png"
                   alt="Bharadwaj portrait"
