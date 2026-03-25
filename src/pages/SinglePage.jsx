@@ -84,7 +84,6 @@ const skillDomainCards = [
     ],
     tools: [
       "React",
-      "Vite",
       "JavaScript",
       "HTML5",
       "CSS3",
@@ -484,7 +483,7 @@ export default function SinglePage() {
                 <h3 className="text-xl font-bold uppercase tracking-[0.2em] text-accent text-center lg:text-right mb-8 lg:mb-12">Training</h3>
                 <div className="space-y-12 lg:space-y-16">
                   {trainingPrograms.map(training => (
-                    <motion.div variants={itemVariants} key={training.title} className="relative group pl-8 lg:pl-0 lg:pr-16 lg:text-right hover-lift">
+                    <motion.div variants={itemVariants} key={training.title} className="relative group pl-8 lg:pl-0 lg:pr-16 lg:text-right ">
                        {/* Marker */}
                        <div className="absolute left-0 lg:left-auto lg:-right-[0.4rem] top-3 w-4 h-4 rounded-full bg-surface-soft ring-4 ring-text shadow-sm hidden lg:block z-10"></div>
                        <p className="text-sm font-bold text-muted mb-2 uppercase tracking-widest">{training.timeframe}</p>
@@ -500,7 +499,7 @@ export default function SinglePage() {
                 <h3 className="text-xl font-bold uppercase tracking-[0.2em] text-accent text-center lg:text-right mb-8 lg:mb-12">Academics</h3>
                 <div className="space-y-12 lg:space-y-16">
                   {educationHistory.map((entry) => (
-                    <motion.div variants={itemVariants} key={entry.school} className="relative group pl-8 lg:pl-0 lg:pr-16 lg:text-right hover-lift">
+                    <motion.div variants={itemVariants} key={entry.school} className="relative group pl-8 lg:pl-0 lg:pr-16 lg:text-right ">
                        <div className="absolute left-0 lg:left-auto lg:-right-[0.4rem] top-3 w-4 h-4 rounded-full bg-surface-soft ring-4 ring-text shadow-sm hidden lg:block z-10"></div>
                        <p className="text-xs font-bold text-muted mb-2 uppercase tracking-widest">{entry.timeframe}</p>
                        <h4 className="text-3xl font-bold text-text mb-2 tracking-tight">{entry.school}</h4>
@@ -521,7 +520,7 @@ export default function SinglePage() {
                 <h3 className="text-xl font-bold uppercase tracking-[0.2em] text-accent text-center lg:text-left mb-8 lg:mb-12">Leadership & Roles</h3>
                 <div className="space-y-12 lg:space-y-16">
                   {experienceItems.map((item) => (
-                    <motion.div variants={itemVariants} key={item.title} className="relative group pl-8 lg:pl-16 lg:text-left hover-lift">
+                    <motion.div variants={itemVariants} key={item.title} className="relative group pl-8 lg:pl-16 lg:text-left ">
                        {/* Marker */}
                        <div className="absolute left-0 lg:-left-[0.4rem] top-3 w-4 h-4 rounded-full bg-surface-soft ring-4 ring-text shadow-sm hidden lg:block z-10"></div>
                        <p className="text-sm font-bold text-muted mb-2 uppercase tracking-widest">{item.timeframe}</p>
@@ -537,7 +536,7 @@ export default function SinglePage() {
                 <h3 className="text-xl font-bold uppercase tracking-[0.2em] text-accent text-center lg:text-left mb-8 lg:mb-12">Certifications</h3>
                 <div className="space-y-12 lg:space-y-16">
                   {certificationsList.map(cert => (
-                    <motion.div variants={itemVariants} key={cert.title} className="relative group pl-8 lg:pl-16 lg:text-left hover-lift">
+                    <motion.div variants={itemVariants} key={cert.title} className="relative group pl-8 lg:pl-16 lg:text-left ">
                        {/* Marker */}
                        <div className="absolute left-0 lg:-left-[0.4rem] top-3 w-4 h-4 rounded-full bg-surface-soft ring-4 ring-text shadow-sm hidden lg:block z-10"></div>
                        <p className="text-sm font-bold text-muted mb-2 uppercase tracking-widest">{cert.timeframe}</p>
