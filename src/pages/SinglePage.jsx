@@ -381,7 +381,7 @@ export default function SinglePage() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-20 sm:gap-32 md:gap-40 mx-auto md:mt-[-64px] " data-page="single">
+    <div className="flex flex-col gap-20 sm:gap-32 md:gap-40 mx-auto md:mt-[-60px] " data-page="single">
       <HeroIntro />
 
       {/* ABOUT SECTION */}

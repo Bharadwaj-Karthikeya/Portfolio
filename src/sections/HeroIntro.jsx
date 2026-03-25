@@ -153,7 +153,7 @@ export default function HeroIntro() {
           })}
           
           <div className="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] lg:w-[400px] lg:h-[400px] p-2 group z-10 flex items-center justify-center">
-             {/* Glow effect behind */}
+            {/* Glow effect behind */}
              <div className="absolute inset-0  bg-gradient-to-tr from-accent to-accent-strong opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"></div>
              
              {/* Image container */}
@@ -161,7 +161,8 @@ export default function HeroIntro() {
                 <img
                   src="/media/portfolioSelfImage.png"
                   alt="Bharadwaj portrait"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover select-none pointer-events-none"
+                  draggable="false"
                 />
              </div>
           </div>
