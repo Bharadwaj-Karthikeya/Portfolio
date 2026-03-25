@@ -8,6 +8,9 @@ export default function Footer() {
         <p className="text-xs">
           Based in Hyderabad, India · pbk311205@gmail.com
         </p>
+        <p className="text-xs">
+          © 2026 Bharadwaj Karthikeya. All rights reserved.
+        </p>
       </div>
     </footer>
   );
